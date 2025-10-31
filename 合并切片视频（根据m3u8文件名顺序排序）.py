@@ -39,8 +39,12 @@ def main():
         os.rmdir(path)
     except Exception as e:
         print(f"删除文件夹 {path} 时出错: {e}")
-
-    print('完成！自动删除原文件')
+    # 删除m3u8文件
+    try:
+        os.remove(name+'.m3u8')
+    except Exception as e:
+        print(f"删除m3u8文件 {path} 时出错: {e}")
+    print('完成！成功自动删除原文件')
 
 k = '1'
 while k == '1':
